@@ -8,9 +8,20 @@ namespace DoorControl
 {
     public class DoorControlClass
     {
-        public void RequestEntry(int id)
+        private readonly UserValidation _uv;
+        private readonly Door _door;
+        public void RequestEntry(string status)
         {
-
+            status = _uv.ValidateEntryRequest();
+            
+            if(status == "OK")
+            {
+                _door.OpenDoor();
+            }
+            else
+            {
+                _door.CloseDoor();
+            }
         }
     }
 }

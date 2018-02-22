@@ -10,6 +10,7 @@ namespace DoorControl
     {
         private readonly KodeGenerator _kg;
         private readonly Door _door;
+        public string dør { get; set; }
         public string ValidateEntryRequest(int id)
         {
             string dør = "Fail";
