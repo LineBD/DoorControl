@@ -11,10 +11,18 @@ namespace DoorControl.Test.Unit
     [TestFixture]
     public class DoorControlTest
     {
+        private DoorControlClass _uut;
+
         [SetUp]
         public void SetUp()
         {
-            
+            _uut = new DoorControlClass();
+        }
+
+        [Test]
+        public void IsDoorOpen_TestState_ResultIsCorrect()
+        {
+            Assert.That(_uut.RequestEntry());
         }
 
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DoorControl
 {
-    public class DoorControl
+    public class DoorControlClass
     {
         public void RequestEntry(int id)
         {
