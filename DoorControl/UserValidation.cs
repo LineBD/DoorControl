@@ -8,9 +8,24 @@ namespace DoorControl
 {
     public class UserValidation : IUserValidation
     {
-        public void ValidateEntryRequest(int id)
+        private readonly KodeGenerator _kg;
+        private readonly Door _door;
+        public string dør { get; set; }
+        public string ValidateEntryRequest(int id)
         {
-
+            string dør = "Fail";
+            id = _kg.Code();
+            if(id == 2)
+            {
+                dør = "OK";
+            }
+            else
+            {
+                dør = "Fail";
+            }
+            return dør;
+            
+            
         }
     }
 }

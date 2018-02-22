@@ -42,6 +42,9 @@
   <ItemGroup>
     <Compile Include="Door.cs" />
     <Compile Include="DoorControlClass.cs" />
+    <Compile Include="IDoor.cs" />
+    <Compile Include="IKodeGenerator.cs" />
+    <Compile Include="IUserValidation.cs" />
     <Compile Include="KodeGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserValidation.cs" />
