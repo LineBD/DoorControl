@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DoorControl
 {
-    public class UserValidation
+    public class UserValidation : IUserValidation
     {
         private readonly KodeGenerator _kg;
         private readonly Door _door;
