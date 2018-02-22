@@ -12,10 +12,16 @@ namespace DoorControl.Test.Unit
     public class DoorControlTest
     {
         private DoorControlClass _uut;
+        private IDoor _door;
+        private IUserValidation _uservalidation;
+        private IKodeGenerator _kode;
 
         [SetUp]
         public void SetUp()
         {
+            _door = Substitute.For<IDoor>();
+            _uservalidation = Substitute.For<IUserValidation>();
+            _kode = Substitute.For<IKodeGenerator>();
             _uut = new DoorControlClass();
         }
 
