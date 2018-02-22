@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DoorControl
 {
-    class UserValidation
+    public class UserValidation
     {
+        public void ValidateEntryRequest(int id)
+        {
+
+        }
     }
 }
