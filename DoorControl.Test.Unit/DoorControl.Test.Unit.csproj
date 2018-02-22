@@ -55,5 +55,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DoorControl\DoorControl.csproj">
+      <Project>{94443c40-a358-422f-a8b6-15b7b2f4634f}</Project>
+      <Name>DoorControl</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
