@@ -9,12 +9,12 @@ namespace DoorControl
 {
     public class KodeGenerator
     {
-        public int code { get; set; }
+        public int id { get; set; }
         public int Code()
         {
             Random rnd = new Random();
-            int code = rnd.Next(1, 4);
-            return code;
+            int id = rnd.Next(1, 4);
+            return id;
         }
     }
 }
