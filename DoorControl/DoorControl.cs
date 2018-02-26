@@ -8,9 +8,10 @@ namespace DoorControl
 {
     public class DoorControl
     {
+         
         public void RequestEntry(int id)
         {
-
+            
         }
     }
 }

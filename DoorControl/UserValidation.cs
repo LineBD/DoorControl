@@ -10,7 +10,7 @@ namespace DoorControl
     {
         public void ValidateEntryRequest(int id)
         {
-
+             
         }
     }
 }
