@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DoorControl
 {
-    public class KodeGenerator
+    public class KodeGenerator : IKodeGenerator
     {
         public int id { get; set; }
         public int Code()
