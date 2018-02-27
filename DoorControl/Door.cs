@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace DoorControl
 {
-    class Door : IDoor
+    public class Door : IDoor
     {
+        public string DoorState { get; set; }
         public void OpenDoor()
         {
             Console.WriteLine("Door is open");

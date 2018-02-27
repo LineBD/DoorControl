@@ -8,30 +8,59 @@ namespace DoorControl
 {
     public class DoorControlClass
     {
-        public IUserValidation UV { get; set; }
-        public IDoor Door { get; set; }
-        public IKodeGenerator KodeGenerator { get; set; }
+        private IDoor _door;
+        //public IUserValidation UV { get; set; }
+        //public IDoor Door { get; set; }
+        //public IKodeGenerator KodeGenerator { get; set; }
 
-        public DoorControlClass(IUserValidation uv, IDoor door, IKodeGenerator kodegenerator)
+        private enum DoorState
         {
-            UV = uv;
-            Door = door;
-            KodeGenerator = kodegenerator;
+            Closed,
+            Opening,
+            Closing,
+
         }
-        public void RequestEntry(int status)
+
+        private DoorState doorState;
+
+        public DoorControlClass(Door door)
         {
-            UV.ValidateEntryRequest(KodeGenerator.id);
-            bool IDStatus = UV.ValidateEntryRequest(status);
+            this._door = door;
+            _door.CloseDoor();
+            doorState = DoorState.Closed;
+        }
+        public void RequestEntry()
+        {
+            //UV.ValidateEntryRequest(KodeGenerator.id);
+            //bool IDStatus = UV.ValidateEntryRequest(status);
             
-            if( IDStatus== true)
+            //if( IDStatus== true)
+            //{
+            //    Door.OpenDoor();
+            //    Console.WriteLine("Door Open");
+            //}
+            //else
+            //{
+            //    Door.CloseDoor();
+            //    Console.WriteLine("Door closed");
+            //}
+            switch (doorState)
             {
-                Door.OpenDoor();
-                Console.WriteLine("Door Open");
-            }
-            else
-            {
-                Door.CloseDoor();
-                Console.WriteLine("Door closed");
+                case DoorState.Closed:
+                 _door.OpenDoor();
+                 doorState = DoorState.Opening;
+                 break;
+
+                case DoorState.Opening:
+                    _door.CloseDoor();
+                    doorState = DoorState.Closing;
+                    break;
+
+                case DoorState.Closing:
+                    _door.CloseDoor();
+                    doorState = DoorState.Closed;
+                    break;
+
             }
         }
     }
