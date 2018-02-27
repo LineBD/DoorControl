@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace DoorControl
 {
-    public class DoorControl
+   public interface IKodeGenerator
     {
-         
         public void RequestEntry(int id)
         {
-            
+
         }
     }
 }
