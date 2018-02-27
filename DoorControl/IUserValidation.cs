@@ -8,6 +8,7 @@ namespace DoorControl
 {
    public interface IUserValidation
     {
-        void ValidateEntryRequest(int id);
+        string dør { get; set; }
+        string ValidateEntryRequest(int id);
     }
 }
