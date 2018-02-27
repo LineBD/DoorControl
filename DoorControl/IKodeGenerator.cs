@@ -8,9 +8,7 @@ namespace DoorControl
 {
    public interface IKodeGenerator
     {
-        public void RequestEntry(int id)
-        {
-
-        }
+        int id { get; set; }
+         int Code();
     }
 }
