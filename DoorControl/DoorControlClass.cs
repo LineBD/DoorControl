@@ -8,19 +8,30 @@ namespace DoorControl
 {
     public class DoorControlClass
     {
-        private readonly UserValidation _uv;
-        private readonly Door _door;
-        public void RequestEntry(string status)
+        public IUserValidation UV { get; set; }
+        public IDoor Door { get; set; }
+        public IKodeGenerator KodeGenerator { get; set; }
+
+        public DoorControlClass(IUserValidation uv, IDoor door, IKodeGenerator kodegenerator)
         {
-            status = _uv.ValidateEntryRequest();
+            UV = uv;
+            Door = door;
+            KodeGenerator = kodegenerator;
+        }
+        public void RequestEntry(int status)
+        {
+            UV.ValidateEntryRequest(KodeGenerator.id);
+            bool IDStatus = UV.ValidateEntryRequest(status);
             
-            if(status == "OK")
+            if( IDStatus== true)
             {
-                _door.OpenDoor();
+                Door.OpenDoor();
+                Console.WriteLine("Door Open");
             }
             else
             {
-                _door.CloseDoor();
+                Door.CloseDoor();
+                Console.WriteLine("Door closed");
             }
         }
     }
